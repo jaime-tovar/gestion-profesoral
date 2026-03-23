@@ -18,7 +18,7 @@ define('DB_USER', 'root');
 define('DB_PASS', '');
 
 // Nombre de la base de datos a la que nos vamos a conectar.
-define('DB_NAME', 'bdbiblioteca');
+define('DB_NAME', 'db_gestion_profesoral');
 
 // Puerto de MySQL. 3306 es el puerto estándar por defecto.
 define('DB_PORT', 3306);
