@@ -17,6 +17,7 @@ class Programa {
     private string $ciudad;
     private int $facultad;
     private ?DateTime $fecha_borrado;
+    private ?DateTime $fecha_creacion;  
 
     // Constructor: se llama al crear un nuevo objeto de esta clase.
     public function __construct(
@@ -30,6 +31,7 @@ class Programa {
         string $ciudad = '',
         int $facultad = 0,
         ?DateTime $fecha_borrado = null,
+        ?DateTime $fecha_creacion = null
     ) {
         // $this hace referencia al objeto actual que se está creando.
         $this->id         = $id;
@@ -42,6 +44,7 @@ class Programa {
         $this->ciudad      = $ciudad;
         $this->facultad    = $facultad;
         $this->fecha_borrado = null;
+        $this->fecha_creacion = $fecha_creacion;
     }
 
     // GETTERS: métodos para ACCEDER a las propiedades privadas.
@@ -56,7 +59,7 @@ class Programa {
     public function getCiudad(): string   { return $this->ciudad; }
     public function getFacultad(): int   { return $this->facultad; }
     public function getFechaBorrado(): ?DateTime { return $this->fecha_borrado; }
-
+    public function getFechaCreacion(): ?DateTime { return $this->fecha_creacion; }
     // SETTERS: métodos para MODIFICAR las propiedades privadas.
     public function setId(string $id): void     { $this->id = $id; }
     public function setNombre(string $nombre): void     { $this->nombre = $nombre; }
@@ -68,5 +71,5 @@ class Programa {
     public function setCiudad(string $ciudad): void     { $this->ciudad = $ciudad; }
     public function setFacultad(int $facultad): void     { $this->facultad = $facultad; }
     public function setFechaBorrado(?DateTime $fecha_borrado): void     { $this->fecha_borrado = $fecha_borrado; }
+    public function setFechaCreacion(?DateTime $fecha_creacion): void     { $this->fecha_creacion = $fecha_creacion; }
 }
-?>

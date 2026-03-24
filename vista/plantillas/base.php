@@ -92,6 +92,24 @@
             <a class="nav-link <?= ($ruta ?? '') === 'areaConocimiento' ? 'active' : '' ?>" href="index.php?ruta=areaConocimiento">
                 <i class="bi bi-geo-alt"></i> Áreas de Conocimiento
             </a>
+            <a class="nav-link <?= ($ruta ?? '') === 'terminoClave' ? 'active' : '' ?>" href="index.php?ruta=terminoClave">
+                <i class="bi bi-key"></i> Términos Clave
+            </a>
+            <a class="nav-link <?= ($ruta ?? '') === 'lineaInvestigacion' ? 'active' : '' ?>" href="index.php?ruta=lineaInvestigacion">
+                <i class="bi bi-diagram-3"></i> Líneas de Investigación
+            </a>
+            <a class="nav-link <?= ($ruta ?? '') === 'Programa' ? 'active' : '' ?>" href="index.php?ruta=Programa">
+                <i class="bi bi-journal-bookmark"></i> Programas
+            </a>
+            <a class="nav-link <?= ($ruta ?? '') === 'red' ? 'active' : '' ?>" href="index.php?ruta=red">
+                <i class="bi bi-hdd-network"></i> Redes
+            </a>
+            <a class="nav-link <?= ($ruta ?? '') === 'rol' ? 'active' : '' ?>" href="index.php?ruta=rol">
+                <i class="bi bi-person-badge"></i> Roles
+            </a>
+            <a class="nav-link <?= ($ruta ?? '') === 'usuario' ? 'active' : '' ?>" href="index.php?ruta=usuario">
+                <i class="bi bi-person"></i> Usuarios
+            </a>
         </nav>
     </div>
 

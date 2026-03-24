@@ -69,13 +69,33 @@ CREATE TABLE IF NOT EXISTS `red` (
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
+CREATE TABLE IF NOT EXISTS `rol` (
+    `id`  VARCHAR(36) NOT NULL DEFAULT UUID(),
+    `nombre` VARCHAR(50) NOT NULL,
+    `descripcion` TEXT NOT NULL,
+    `activo` TINYINT(1) DEFAULT 1,
+    `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
+    `fecha_borrado` DATETIME DEFAULT NULL,
+    `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
 CREATE TABLE IF NOT EXISTS `usuario` (
-    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `id` VARCHAR(36) NOT NULL DEFAULT UUID(),
     `username` VARCHAR(100) NOT NULL UNIQUE,
     `password` VARCHAR(255) NOT NULL,
     `email` VARCHAR(150) NOT NULL UNIQUE,
     `nombre_completo` VARCHAR(200),
     `activo` TINYINT(1) DEFAULT 1,
     `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
-    `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS `usuario_rol` (
+    `usuario_id` VARCHAR(36),
+    `rol_id` VARCHAR(36),
+    PRIMARY KEY (`usuario_id`, `rol_id`),
+    FOREIGN KEY (`usuario_id`) REFERENCES `usuario`(`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`rol_id`) REFERENCES `rol`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB;
