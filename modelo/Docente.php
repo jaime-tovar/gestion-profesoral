@@ -23,7 +23,7 @@ class Docente {
     private ?string $nacionalidad;
     private ?string $linea_investigacion_principal;
     private ?DateTime $fecha_creacion;
-    private ?DateTime $fecha_actualizacion;
+    private ?DateTime $fecha_borrado;
 
     // Constructor
     public function __construct(
@@ -44,7 +44,7 @@ class Docente {
         ?string $nacionalidad = null,
         ?string $linea_investigacion_principal = null,
         ?DateTime $fecha_creacion = null,
-        ?DateTime $fecha_actualizacion = null
+        ?DateTime $fecha_borrado = null
     ) {
         $this->id = $id;
         $this->cedula = $cedula;
@@ -63,7 +63,7 @@ class Docente {
         $this->nacionalidad = $nacionalidad;
         $this->linea_investigacion_principal = $linea_investigacion_principal;
         $this->fecha_creacion = $fecha_creacion;
-        $this->fecha_actualizacion = $fecha_actualizacion;
+        $this->fecha_borrado = $fecha_borrado;
     }
 
     // GETTERS
@@ -84,7 +84,7 @@ class Docente {
     public function getNacionalidad(): ?string { return $this->nacionalidad; }
     public function getLineaInvestigacionPrincipal(): ?string { return $this->linea_investigacion_principal; }
     public function getFechaCreacion(): ?DateTime { return $this->fecha_creacion; }
-    public function getFechaActualizacion(): ?DateTime { return $this->fecha_actualizacion; }
+    public function getFechaBorrado(): ?DateTime { return $this->fecha_borrado; }
 
     // SETTERS
     public function setId(string $id): void { $this->id = $id; }
@@ -104,6 +104,6 @@ class Docente {
     public function setNacionalidad(?string $nacionalidad): void { $this->nacionalidad = $nacionalidad; }
     public function setLineaInvestigacionPrincipal(?string $linea_investigacion_principal): void { $this->linea_investigacion_principal = $linea_investigacion_principal; }
     public function setFechaCreacion(?DateTime $fecha_creacion): void { $this->fecha_creacion = $fecha_creacion; }
-    public function setFechaActualizacion(?DateTime $fecha_actualizacion): void { $this->fecha_actualizacion = $fecha_actualizacion; }
+    public function setFechaBorrado(?DateTime $fecha_borrado): void { $this->fecha_borrado = $fecha_borrado; }
 }
 ?>

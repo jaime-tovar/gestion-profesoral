@@ -214,6 +214,7 @@ CREATE TABLE IF NOT EXISTS `docente` (
     `conv_minciencia` VARCHAR(50),
     `nacionalidad` VARCHAR(50),
     `linea_investigacion_principal` VARCHAR(36),
+    `fecha_borrado` DATETIME DEFAULT NULL,
     `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     
@@ -240,6 +241,7 @@ CREATE TABLE IF NOT EXISTS `estudios_realizados` (
     `ins_acreditada` BOOLEAN,
     `metodologia` VARCHAR(100),
     `perfil_egresado` TEXT,
+    `fecha_borrado` DATETIME DEFAULT NULL,
     `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     
@@ -261,6 +263,7 @@ CREATE TABLE IF NOT EXISTS `docente_departamento` (
     `modalidad` VARCHAR(50),  -- presencial, virtual, híbrido, etc.
     `fecha_ingreso` DATE,
     `fecha_salida` DATE,
+    `fecha_borrado` DATETIME DEFAULT NULL,
     `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     
@@ -283,6 +286,7 @@ CREATE TABLE IF NOT EXISTS `intereses_futuros` (
     `id` VARCHAR(36) NOT NULL DEFAULT UUID(),
     `docente` VARCHAR(36) NOT NULL,
     `termino_clave` VARCHAR(36) NOT NULL,
+    `fecha_borrado` DATETIME DEFAULT NULL,
     `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
@@ -306,6 +310,7 @@ CREATE TABLE IF NOT EXISTS `evaluacion_docente` (
     `calificacion` DECIMAL(5,2) NOT NULL,
     `semestre` VARCHAR(10) NOT NULL,
     `docente` VARCHAR(36) NOT NULL,
+    `fecha_borrado` DATETIME DEFAULT NULL,
     `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
@@ -329,6 +334,7 @@ CREATE TABLE IF NOT EXISTS `reconocimiento` (
     `ambito` VARCHAR(50),
     `fecha` DATE,
     `docente` VARCHAR(36) NOT NULL,
+    `fecha_borrado` DATETIME DEFAULT NULL,
     `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
@@ -349,6 +355,7 @@ CREATE TABLE IF NOT EXISTS `experiencia` (
     `fecha_inicio` DATE NOT NULL,
     `fecha_fin` DATE,
     `docente` VARCHAR(36) NOT NULL,
+    `fecha_borrado` DATETIME DEFAULT NULL,
     `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
@@ -368,6 +375,7 @@ CREATE TABLE IF NOT EXISTS `red_docente` (
     `fecha_inicio` DATE,
     `fecha_fin` DATE,
     `act_destacadas` TEXT,
+    `fecha_borrado` DATETIME DEFAULT NULL,
     `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
@@ -390,6 +398,7 @@ CREATE TABLE IF NOT EXISTS `estudio_ac` (
     `id` VARCHAR(36) NOT NULL DEFAULT UUID(),
     `estudio` VARCHAR(36) NOT NULL,
     `area_conocimiento` VARCHAR(36) NOT NULL,
+    `fecha_borrado` DATETIME DEFAULT NULL,
     `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
@@ -417,6 +426,7 @@ CREATE TABLE IF NOT EXISTS `apoyo_profesoral` (
     `con_apoyo` BOOLEAN NOT NULL,
     `institucion` VARCHAR(150),
     `tipo` VARCHAR(100),
+    `fecha_borrado` DATETIME DEFAULT NULL,
     `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
@@ -436,6 +446,7 @@ CREATE TABLE IF NOT EXISTS `beca` (
     `institucion` VARCHAR(150) NOT NULL,
     `fecha_inicio` DATE,
     `fecha_fin` DATE,
+    `fecha_borrado` DATETIME DEFAULT NULL,
     `fecha_creacion` DATETIME DEFAULT CURRENT_TIMESTAMP,
     `fecha_actualizacion` DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
